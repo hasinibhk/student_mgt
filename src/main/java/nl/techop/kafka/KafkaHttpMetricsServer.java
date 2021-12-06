@@ -79,10 +79,7 @@ public class KafkaHttpMetricsServer {
 
     // adding the codahale metrics servlet to the servlet context
     servletContextHandler.addServlet(new ServletHolder(new AdminServlet()), "/api");
-    servletContextHandler.addServlet(new ServletHolder(new MetricsServlet()), "/api/metrics");
-    servletContextHandler.addServlet(new ServletHolder(new ThreadDumpServlet()), "/api/threads");
-    servletContextHandler.addServlet(new ServletHolder(new HealthCheckServlet()), "/api/healthcheck");
-    servletContextHandler.addServlet(new ServletHolder(new PingServlet()), "/api/ping");
+
 
     // adding the configured servlet context handler to the Jetty Server
     server.setHandler(servletContextHandler);
